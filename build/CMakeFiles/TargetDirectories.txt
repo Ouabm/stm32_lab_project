@@ -1,0 +1,5 @@
+/home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/example/stm32_project/build/CMakeFiles/edit_cache.dir
+/home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/example/stm32_project/build/CMakeFiles/rebuild_cache.dir
+/home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/example/stm32_project/build/main/CMakeFiles/stm32_rt.dir
+/home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/example/stm32_project/build/main/CMakeFiles/edit_cache.dir
+/home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/example/stm32_project/build/main/CMakeFiles/rebuild_cache.dir
