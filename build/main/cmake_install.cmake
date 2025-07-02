@@ -1,4 +1,4 @@
-# Install script for directory: /home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/example/stm32_project/main
+# Install script for directory: /home/oualid-boudemagh/Bureau/stm32_lab_project/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -4,7 +4,7 @@
 BLUE='\033[1;34m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
-
+Card='NOD_H743ZI2'
 # Color functions 
 info() {
     echo -e "${BLUE}[INFO]${NC} $1"
@@ -36,7 +36,7 @@ info "Converting .elf to .bin..."
 arm-none-eabi-objcopy -O binary stm32_rt.elf stm32_rt.bin || error "Error in conversion"
 
 # Flashing the card 
-TARGET_PATH="/media/$USER/NOD_H743ZI2"
+TARGET_PATH="/media/$USER/${Card}"
 if [ -d "$TARGET_PATH" ]; then
     info "Copying bin file to ($TARGET_PATH)..."
     cp "stm32_rt.bin" "$TARGET_PATH" || error "Error in copying file"
