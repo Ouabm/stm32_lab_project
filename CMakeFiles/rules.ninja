@@ -62,7 +62,7 @@ rule CXX_EXECUTABLE_LINKER__stm32_rt_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/example/stm32_project -B/home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/example/stm32_project
+  command = /usr/bin/cmake --regenerate-during-build -S/home/oualid-boudemagh/Bureau/stm32_lab_project -B/home/oualid-boudemagh/Bureau/stm32_lab_project
   description = Re-running CMake...
   generator = 1
 
