@@ -70,7 +70,7 @@ sudo apt install gcc-arm-none-eabi
 3. **Running**:
 
 ```bash
-clone https://github.com/Ouabm/stm32_lab_project.git
+git clone https://github.com/Ouabm/stm32_lab_project.git
 ```
   then
 ```bash
