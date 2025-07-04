@@ -80,4 +80,4 @@ cd stm32_lab_project/
 ```bash
 ./Build_stm32
 ```
-![Aperçu](assets/Diagramme vierge.jpeg)
+![Aperçu](assets/img.jpeg)
