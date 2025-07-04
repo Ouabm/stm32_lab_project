@@ -42,7 +42,7 @@ target_include_directories(stm32_rt PUBLIC
     ${PROJECT_SOURCE_DIR}/main/include/Drivers/CMSIS/Include
     ${PROJECT_SOURCE_DIR}/main/include/Drivers/BSP/STM32H7xx_Nucleo
     ${PROJECT_SOURCE_DIR}/main/include/Drivers/STM32H7xx_HAL_Driver/Inc
-    ${PROJECT_SOURCE_DIR}/main/include/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h
+    ${PROJECT_SOURCE_DIR}/main/include/Drivers/STM32H7xx_HAL_Driver/Inc
     ${PROJECT_SOURCE_DIR}/main/include/Core/Inc
     ${PROJECT_SOURCE_DIR}/main/include
     ${PROJECT_SOURCE_DIR}/main/include/USB_DEVICE/App
