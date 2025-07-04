@@ -19,12 +19,6 @@ int main() {
     MX_TIM6_Init();     
     HAL_TIM_Base_Start(&htim6); 
     MX_ADC1_Init();
- 
-    // 2) Simulation Cadmium
-  
-        
-    
-   
     auto model = std::make_shared<top_coupled>("top_coupled");
     STM32Clock<double> clock; 
     auto rootCoordinator=cadmium::RealTimeRootCoordinator<STM32Clock<double>>(model,clock);
