@@ -12,8 +12,8 @@ extern "C" {
 }
 
 int main() {
-    MX_TIM2_Init();           //  TIM2 configuré dans CubeMX
-    HAL_TIM_Base_Start(&htim2);  // Démarrage du timer pour l’horloge
+    MX_TIM2_Init();          
+    HAL_TIM_Base_Start(&htim2);  
     MX_TIM4_Init();
     HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_1);
     MX_TIM6_Init();     
