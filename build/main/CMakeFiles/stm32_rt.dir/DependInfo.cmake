@@ -24,6 +24,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/CMSIS/Include"
   "/home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/BSP/STM32H7xx_Nucleo"
   "/home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/STM32H7xx_HAL_Driver/Inc"
+  "/home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h"
   "/home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Core/Inc"
   "/home/oualid-boudemagh/Bureau/stm32_lab_project/main/include"
   "/home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/USB_DEVICE/App"
