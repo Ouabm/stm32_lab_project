@@ -78,6 +78,6 @@ cd stm32_lab_project/
 ```
   then
 ```bash
-./Build_stm32
+./build_stm32
 ```
 ![Aperçu](assets/img.jpeg)
