@@ -65,12 +65,9 @@ namespace cadmium {
     }
 	    	float Vref = sum / 21;
 	        float ppm = 0.0f;
-	        float correction;
-	        float ppm_c;
 	        float slope = 0.030f / (2.602f - 3.0f);  
 	         ppm = powf(10.0f, ((Vout - Vref) / slope + 2.602f));
-	        // correction = 2.731;
-	        // ppm_c=ppm*correction;
+	        
              state.output=ppm;
             state.sigma = 0.8;
         }
