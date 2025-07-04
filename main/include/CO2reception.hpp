@@ -37,10 +37,10 @@ namespace cadmium {
         Port<float> in;
        
 
-        // Période d’échantillonnage (en secondes)
+       
         double pollingRate;
 
-        // Constructeur
+        
         Reception(const std::string& id) 
             : Atomic<ReceptionState>(id, ReceptionState()) {
 
@@ -72,7 +72,7 @@ namespace cadmium {
             state.sigma = 0.1;
         }
 
-        // Transition externe
+     
         void externalTransition(ReceptionState& state, double e) const override {
             if (!in->empty()) {
                 for (const auto value : in->getBag()) {
@@ -81,7 +81,7 @@ namespace cadmium {
             } 
         }
 
-        // Fonction de sortie
+    
         void output(const ReceptionState& state) const override {
            
                 out_good->addMessage(state.output_good);
@@ -90,7 +90,7 @@ namespace cadmium {
             
         }
 
-        // Avance dans le temps
+     
         [[nodiscard]] double timeAdvance(const ReceptionState& state) const override {
             return state.sigma;
         }
