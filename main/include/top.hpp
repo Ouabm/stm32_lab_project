@@ -3,6 +3,7 @@
 
 #include "cadmium/modeling/devs/coupled.hpp"
 #include "atomic.hpp"
+#include "Digitalinput.hpp"
 #include "Digitalout_good.hpp"
 #include "Digitalout_bad.hpp"
 #include "Digitalout_avrege.hpp"
@@ -52,6 +53,13 @@ struct top_coupled : public Coupled
             .Pull = GPIO_NOPULL,
             .Speed = GPIO_SPEED_FREQ_LOW,
             .Alternate = 0};
+        
+        static GPIO_InitTypeDef led_config_input = {
+            .Pin = GPIO_PIN_14,
+            .Mode = GPIO_MODE_INPUT,
+            .Pull = GPIO_NOPULL,
+            .Speed = GPIO_SPEED_FREQ_LOW,
+            .Alternate = 0};
 
         GPIO_TypeDef *led_port1 = GPIOB;
         GPIO_TypeDef *led_port2 = GPIOE;
@@ -74,7 +82,12 @@ struct top_coupled : public Coupled
             "analogueinout",
             inputport,
             &hadc1);
-        // CO2
+        
+        auto motion = addComponent<DigitalInput>(
+            "motion",
+            led_port2,
+            &led_config_input);
+
         auto reception = addComponent<Reception>("reception");
         auto temp = addComponent<TemperatureSensorInput>("Temp");
         auto generator = addComponent<ServoCommandGenerator>("ServocommandState");
@@ -87,6 +100,7 @@ struct top_coupled : public Coupled
         addCoupling(temp->out, generator->in);
         addCoupling(generator->out, controller->in);
         addCoupling(controller->out, pwm->in);
+        // addCoupling(motion->out, digitaloutputbad->in);
     }
 };
 

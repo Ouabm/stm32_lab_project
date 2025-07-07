@@ -172,7 +172,7 @@ main/CMakeFiles/stm32_rt.dir/main.cpp.obj: \
  /home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/include/cadmium/modeling/devs/../../exception.hpp \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/atomic.hpp \
  /home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/include/cadmium/modeling/devs/atomic.hpp \
- /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Digitalout_good.hpp \
+ /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Digitalinput.hpp \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
@@ -204,6 +204,7 @@ main/CMakeFiles/stm32_rt.dir/main.cpp.obj: \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h \
+ /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Digitalout_good.hpp \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Digitalout_bad.hpp \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Digitalout_avrege.hpp \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/CO2polling.hpp \
