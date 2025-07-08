@@ -83,7 +83,8 @@ sudo apt install gcc-arm-none-eabi
 | DHT11            | PB9       |
 | Servo motor      | PD12      |
 | ADC (MG-811)     | PA0       |
-| GND              | GND       |
+| Motion sensor    | PE0       |
+
 
 
 3. **Running**:
