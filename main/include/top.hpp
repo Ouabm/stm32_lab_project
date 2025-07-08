@@ -7,6 +7,7 @@
 #include "Digitalout_good.hpp"
 #include "Digitalout_bad.hpp"
 #include "Digitalout_avrege.hpp"
+#include "motionout.hpp"
 #include "CO2polling.hpp"
 #include "CO2reception.hpp"
 #include "temperature.hpp"
@@ -30,6 +31,7 @@ struct top_coupled : public Coupled
         // __HAL_RCC_GPIOB_CLK_ENABLE();
         __HAL_RCC_GPIOA_CLK_ENABLE();
         __HAL_RCC_GPIOB_CLK_ENABLE();
+        __HAL_RCC_GPIOG_CLK_ENABLE();
         __HAL_RCC_GPIOE_CLK_ENABLE();
 
         auto atomique = addComponent<atomic_model>("atomique");
@@ -55,14 +57,22 @@ struct top_coupled : public Coupled
             .Alternate = 0};
         
         static GPIO_InitTypeDef led_config_input = {
-            .Pin = GPIO_PIN_14,
+            .Pin = GPIO_PIN_0,
             .Mode = GPIO_MODE_INPUT,
+            .Pull = GPIO_NOPULL,
+            .Speed = GPIO_SPEED_FREQ_LOW,
+            .Alternate = 0};
+
+        static GPIO_InitTypeDef led_config_motion = {
+            .Pin = GPIO_PIN_1,
+            .Mode = GPIO_MODE_OUTPUT_PP,
             .Pull = GPIO_NOPULL,
             .Speed = GPIO_SPEED_FREQ_LOW,
             .Alternate = 0};
 
         GPIO_TypeDef *led_port1 = GPIOB;
         GPIO_TypeDef *led_port2 = GPIOE;
+        GPIO_TypeDef *led_port3 = GPIOG;
         GPIO_TypeDef *inputport = GPIOA;
 
         // Ajout du composant DigitalOutput avec paramètres
@@ -78,6 +88,10 @@ struct top_coupled : public Coupled
             "digitaloutputbad",
             led_port1,
             &led_config_bad);
+        auto motionoutput = addComponent<DigitalOutput>(
+            "motionoutput",
+            led_port3,
+            &led_config_motion);    
         auto analogueinput = addComponent<AnalogInput>(
             "analogueinout",
             inputport,
@@ -100,7 +114,7 @@ struct top_coupled : public Coupled
         addCoupling(temp->out, generator->in);
         addCoupling(generator->out, controller->in);
         addCoupling(controller->out, pwm->in);
-        // addCoupling(motion->out, digitaloutputbad->in);
+        addCoupling(motion->out, motionoutput->in);
     }
 };
 

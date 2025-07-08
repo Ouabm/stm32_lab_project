@@ -30,7 +30,7 @@ namespace cadmium {
         /**
         * DigitalInputState constructor.
         */
-        explicit DigitalInputState(): output(true), last(false), sigma(0.1){}
+        explicit DigitalInputState(): output(false), last(false), sigma(0.1){}
     };
 
 #ifndef NO_LOGGING
@@ -74,7 +74,7 @@ namespace cadmium {
             }
         
            
-            state.sigma = 0.1;
+            state.sigma = 0.5;
         }
 
         // external transition

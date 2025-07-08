@@ -207,6 +207,7 @@ main/CMakeFiles/stm32_rt.dir/main.cpp.obj: \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Digitalout_good.hpp \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Digitalout_bad.hpp \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Digitalout_avrege.hpp \
+ /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/motionout.hpp \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/CO2polling.hpp \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h \
  /home/oualid-boudemagh/Bureau/stm32_lab_project/main/include/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
