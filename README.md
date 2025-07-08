@@ -80,4 +80,6 @@ cd stm32_lab_project/
 ```bash
 ./build_stm32
 ```
+### PINs
+![Aperçu](assets/pins.png)
 ![Aperçu](assets/img.jpeg)
