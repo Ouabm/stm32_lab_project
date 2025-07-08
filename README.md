@@ -1,20 +1,22 @@
 # stm32_lab_project
 the automative lab project in the stm32
 
-This project is a DEVS-based example running on an STM32H743ZI2 development board. It models a **smart home room** where **CO₂** and **temperature** levels are monitored. Depending on the temperature, the system can automatically **turn the air conditioner (AC) on** to regulate the environment.
+This project is a DEVS-based example running on an STM32H743ZI2 development board. It models a **smart home room** where **CO₂** and **temperature** levels are monitored .Depending on the temperature, the system can automatically **turn the air conditioner (AC) on** to regulate the environment, and a motion sensor that detect if there is someone on the room,and turns an led off if someone enters the room.
 
 ## Features
 
 - Real-time CO₂ and temperature monitoring
 - Automatic AC activation based on temperature thresholds
 - a servo motor type FS90R
+- Motion sensor
+- flashing led 
 - Implemented using the DEVS formalism with Cadmium
 - Runs on STM32H743ZI2 using ARM toolchain
 
 ## Prerequisites
 
 - STM32H743ZI2 development board connected via USB
-- CO₂ and temperature sensors properly wired (see installation diagram below)
+- Sensors properly wired (see installation diagram below)
 - Cadmium simulato installed
 - ARM toolchain: `gcc-arm-none-eabi`
 
@@ -54,6 +56,23 @@ sudo apt install gcc-arm-none-eabi
 | VCC    | V+              | 5V                | Requires stable 5V supply             |
 | GND    | GND             | GND               | Common ground                         |
 | PWM    | out             | PD12              | PWM output                            |
+
+---
+### PIR motion sensor (Digital input)
+
+| Signal | PIR Pin    | STM32 Pin Example | Notes                                   |
+|--------|------------|-------------------|-----------------------------------------|
+| VCC    | V+         | 5V                | Requires stable 5V supply               |
+| GND    | GND        | GND               | Common ground                           |
+| OUT    | AO         | PE0               | Digital input connected to digital pin  |
+
+---
+### Flahing LEd (Digital output)
+
+| Signal | PIR Pin    | STM32 Pin Example | Notes                                   |
+|--------|------------|-------------------|-----------------------------------------|
+| VCC    | V+         | 5V                | Requires stable 5V supply               |
+| GND    | GND        | PG1               | Digital pin                             |
 
 ---
 
