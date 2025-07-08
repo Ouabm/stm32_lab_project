@@ -17,7 +17,7 @@ This project is a DEVS-based example running on an STM32H743ZI2 development boar
 
 - STM32H743ZI2 development board connected via USB
 - Sensors properly wired (see installation diagram below)
-- Cadmium simulato installed
+- Cadmium simulator installed
 - ARM toolchain: `gcc-arm-none-eabi`
 
 ## Installation
