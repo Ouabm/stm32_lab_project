@@ -18,11 +18,11 @@ namespace cadmium
     // State structure for the Reception model
     struct ReceptionState
     {
-        float input;           // Received CO₂ value (in ppm)
-        bool output_good;      // Flag if CO₂ level is considered good
-        bool output_bad;       // Flag if CO₂ level is considered bad
-        bool output_avrege;    // Flag if CO₂ level is considered average
-        double sigma;          // Time until next internal transition
+        float input;        // Received CO₂ value (in ppm)
+        bool output_good;   // Flag if CO₂ level is considered good
+        bool output_bad;    // Flag if CO₂ level is considered bad
+        bool output_avrege; // Flag if CO₂ level is considered average
+        double sigma;       // Time until next internal transition
 
         ReceptionState() : input(0.0), output_good(false), output_bad(false), output_avrege(false), sigma(0) {}
     };
@@ -37,12 +37,12 @@ namespace cadmium
     class Reception : public Atomic<ReceptionState>
     {
     public:
-        Port<bool> out_good;     // Output port: CO₂ level is good
-        Port<bool> out_avrege;   // Output port: CO₂ level is average
-        Port<bool> out_bad;      // Output port: CO₂ level is bad
-        Port<float> in;          // Input port: receives CO₂ value
+        Port<bool> out_good;   // Output port: CO₂ level is good
+        Port<bool> out_avrege; // Output port: CO₂ level is average
+        Port<bool> out_bad;    // Output port: CO₂ level is bad
+        Port<float> in;        // Input port: receives CO₂ value
 
-        double pollingRate;      // Unused, reserved for future extension
+        double pollingRate; // Unused, reserved for future extension
 
         // Constructor: define ports and initialize state
         Reception(const std::string &id)

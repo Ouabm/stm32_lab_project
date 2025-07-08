@@ -36,7 +36,7 @@ namespace cadmium
     class AnalogInput : public Atomic<AnalogInputState>
     {
     public:
-        Port<float> out;  // Output port
+        Port<float> out; // Output port
 
         // Constructor: initializes the model with GPIO and ADC handles
         AnalogInput(const std::string &id, GPIO_TypeDef *selectedPort, ADC_HandleTypeDef *pin)
@@ -45,16 +45,16 @@ namespace cadmium
             out = addOutPort<float>("out");
         }
 
-        GPIO_TypeDef *port;             // GPIO port (not used in logic, but kept for completeness)
-        ADC_HandleTypeDef *analogPin;   // Pointer to ADC peripheral
-        double pollingRate;             // Time interval between ADC readings (not currently used)
+        GPIO_TypeDef *port;           // GPIO port (not used in logic, but kept for completeness)
+        ADC_HandleTypeDef *analogPin; // Pointer to ADC peripheral
+        double pollingRate;           // Time interval between ADC readings (not currently used)
 
         // Internal transition: read analog value, convert to voltage, compute ppm
         void internalTransition(AnalogInputState &state) const override
         {
             // Start ADC conversion
             HAL_ADC_Start(analogPin);
-            HAL_ADC_PollForConversion(analogPin, 20); // Wait for conversion to complete (timeout = 20ms)
+            HAL_ADC_PollForConversion(analogPin, 20);   // Wait for conversion to complete (timeout = 20ms)
             uint16_t raw = HAL_ADC_GetValue(analogPin); // Get raw ADC value
 
             // Convert raw value to voltage (assuming 10-bit ADC and 5V reference)
@@ -77,7 +77,7 @@ namespace cadmium
 
             // Convert voltage to CO₂ ppm using sensor's response curve
             float ppm = 0.0f;
-            float slope = 0.030f / (2.602f - 3.0f); // Example calibration slope
+            float slope = 0.030f / (2.602f - 3.0f);              // Example calibration slope
             ppm = powf(10.0f, ((Vout - Vref) / slope + 2.602f)); // Logarithmic formula
 
             // Update state

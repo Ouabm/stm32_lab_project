@@ -2,22 +2,25 @@
 #define __DIGITAL_OUTPUTAVREGE_HPP__
 
 #include "cadmium/modeling/devs/atomic.hpp"
-#include "stm32h7xx_hal_gpio.h" 
+#include "stm32h7xx_hal_gpio.h"
 #include "stm32h7xx_hal_rcc.h"
 #include "stm32h743xx.h"
 
-namespace cadmium {
+namespace cadmium
+{
 
     // State structure for the digital output model
-    struct DigitalOutputavregeState {
-        bool output;     // Current output value (true = HIGH, false = LOW)
-        double sigma;    // Time until next internal transition (not used here)
+    struct DigitalOutputavregeState
+    {
+        bool output;  // Current output value (true = HIGH, false = LOW)
+        double sigma; // Time until next internal transition (not used here)
 
         explicit DigitalOutputavregeState() : output(false), sigma(0) {}
     };
 
     // Optional: logging operator for the state (currently empty)
-    std::ostream& operator<<(std::ostream &out, const DigitalOutputavregeState& state) {
+    std::ostream &operator<<(std::ostream &out, const DigitalOutputavregeState &state)
+    {
         return out;
     }
 
@@ -25,13 +28,14 @@ namespace cadmium {
      * DigitalOutputavrege: A DEVS atomic model that writes a boolean signal to a GPIO pin.
      * It listens to a boolean input and sets the corresponding hardware pin high or low.
      */
-    class DigitalOutputavrege : public Atomic<DigitalOutputavregeState> {
+    class DigitalOutputavrege : public Atomic<DigitalOutputavregeState>
+    {
     public:
-        Port<bool> in;  // Input port receiving a boolean signal
+        Port<bool> in; // Input port receiving a boolean signal
 
         // STM32 hardware configuration
-        GPIO_TypeDef* port;         // GPIO port (e.g., GPIOA, GPIOB)
-        GPIO_InitTypeDef pins;      // GPIO pin configuration
+        GPIO_TypeDef *port;    // GPIO port (e.g., GPIOA, GPIOB)
+        GPIO_InitTypeDef pins; // GPIO pin configuration
 
         /**
          * Constructor
@@ -39,8 +43,8 @@ namespace cadmium {
          * @param selectedPort - GPIO port (e.g., GPIOA, GPIOB)
          * @param selectedPins - GPIO configuration structure
          */
-        DigitalOutputavrege(const std::string& id, GPIO_TypeDef* selectedPort, GPIO_InitTypeDef* selectedPins)
-        : Atomic<DigitalOutputavregeState>(id, DigitalOutputavregeState()), port(selectedPort), pins(*selectedPins)
+        DigitalOutputavrege(const std::string &id, GPIO_TypeDef *selectedPort, GPIO_InitTypeDef *selectedPins)
+            : Atomic<DigitalOutputavregeState>(id, DigitalOutputavregeState()), port(selectedPort), pins(*selectedPins)
         {
             in = addInPort<bool>("in");
 
@@ -55,16 +59,20 @@ namespace cadmium {
         /**
          * Internal transition: no internal state change needed.
          */
-        void internalTransition(DigitalOutputavregeState& state) const override {
+        void internalTransition(DigitalOutputavregeState &state) const override
+        {
             (void)state;
         }
 
         /**
          * External transition: reacts to input message by updating output state and writing to GPIO pin.
          */
-        void externalTransition(DigitalOutputavregeState& state, double /*e*/) const override {
-            if (!in->empty()) {
-                for (const auto value : in->getBag()) {
+        void externalTransition(DigitalOutputavregeState &state, double /*e*/) const override
+        {
+            if (!in->empty())
+            {
+                for (const auto value : in->getBag())
+                {
                     state.output = value;
                 }
                 // Set or reset the pin depending on the boolean value
@@ -75,14 +83,16 @@ namespace cadmium {
         /**
          * Output function: no messages are sent to other models
          */
-        void output(const DigitalOutputavregeState& state) const override {
-            (void)state;  // No output message
+        void output(const DigitalOutputavregeState &state) const override
+        {
+            (void)state; // No output message
         }
 
         /**
          * Time advance function: since no internal events, wait indefinitely
          */
-        [[nodiscard]] double timeAdvance(const DigitalOutputavregeState& /*state*/) const override {
+        [[nodiscard]] double timeAdvance(const DigitalOutputavregeState & /*state*/) const override
+        {
             return std::numeric_limits<double>::infinity();
         }
     };

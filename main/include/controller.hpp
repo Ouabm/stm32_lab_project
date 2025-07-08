@@ -12,8 +12,8 @@ namespace cadmium
     // Structure to represent the internal state of the servo controller
     struct ServoControllerState
     {
-        double duty;   // PWM duty cycle corresponding to the servo angle
-        double sigma;  // Time until the next internal transition
+        double duty;  // PWM duty cycle corresponding to the servo angle
+        double sigma; // Time until the next internal transition
 
         ServoControllerState() : duty(0.0), sigma(std::numeric_limits<double>::infinity()) {}
     };
@@ -29,8 +29,8 @@ namespace cadmium
     class ServoController : public Atomic<ServoControllerState>
     {
     public:
-        Port<double> in;   // Input port: receives servo angle in degrees
-        Port<double> out;  // Output port: sends PWM duty cycle
+        Port<double> in;  // Input port: receives servo angle in degrees
+        Port<double> out; // Output port: sends PWM duty cycle
 
         // Constructor: initialize ports and state
         ServoController(const std::string &id) : Atomic<ServoControllerState>(id, ServoControllerState())
@@ -86,7 +86,7 @@ namespace cadmium
 
                 double min_duty = 0.05; // Corresponds to 0°
                 double max_duty = 0.10; // Corresponds to 180°
-                
+
                 // Linear interpolation between min and max duty cycle
                 return min_duty + (angle / 180.0) * (max_duty - min_duty);
             }

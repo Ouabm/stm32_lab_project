@@ -37,7 +37,7 @@ public:
         fastToggleTime = 1;
         state.sigma = fastToggleTime;
 
-        // Set a value for sigma (so it is not 0), this determines how often the internal transition occurs
+
     }
 
     void internalTransition(atomic_modelState &state) const override
