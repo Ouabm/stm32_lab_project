@@ -37,6 +37,9 @@ sudo apt install gcc-arm-none-eabi
 | GND    | GND        | GND               | Common ground                |
 | Out    | Out        | PB9               | Digital out                  |
 
+## Note : 
+After wiring the sensor, wait at least 10 minutes before initialization to allow it to stabilize.
+If the main project fails to run, test the stm32_temperature project first and ensure the onboard LED turns on, indicating proper operation.
 ---
 
 ### MG-811 – CO₂ Sensor (Analog Output)
@@ -67,12 +70,13 @@ sudo apt install gcc-arm-none-eabi
 | OUT    | AO         | PE0               | Digital input connected to digital pin  |
 
 ---
-### Flahing LEd (Digital output)
+### Flahing LED
+(Digital output)
 
 | Signal | PIR Pin    | STM32 Pin Example | Notes                                   |
 |--------|------------|-------------------|-----------------------------------------|
-| VCC    | V+         | 5V                | Requires stable 5V supply               |
-| GND    | GND        | PG1               | Digital pin                             |
+| VCC    | Yellow     | 5V                | Requires stable 5V supply               |
+| GND    | Black      | PG1               | Digital pin                             |
 
 ---
 
