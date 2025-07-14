@@ -37,9 +37,10 @@ sudo apt install gcc-arm-none-eabi
 | GND    | GND        | GND               | Common ground                |
 | Out    | Out        | PB9               | Digital out                  |
 
-## Note : 
+**Note** :
 After wiring the sensor, wait at least 10 minutes before initialization to allow it to stabilize.
 If the main project fails to run, test the stm32_temperature project first and ensure the onboard LED turns on, indicating proper operation.
+
 ---
 
 ### MG-811 – CO₂ Sensor (Analog Output)
