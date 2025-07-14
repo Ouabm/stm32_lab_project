@@ -111,4 +111,5 @@ cd stm32_lab_project/
 ```
 ### PINs
 ![Aperçu](assets/pins.png)
+### Project diagram
 ![Aperçu](assets/img.jpeg)
