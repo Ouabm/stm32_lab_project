@@ -51,6 +51,10 @@ If the main project fails to run, test the stm32_temperature project first and e
 | GND    | GND        | GND               | Common ground                         |
 | OUT    | AO         | PA0               | Analog output connected to ADC input  |
 
+**Note** :
+After wiring the sensor, wait at least 10 minutes before initialization to allow it to stabilize.
+If the main project fails to run, test the stm32_CO2 project first and ensure the onboard LED turns on, indicating proper operation.
+
 ---
 
 ### Servo motor(PWM)
