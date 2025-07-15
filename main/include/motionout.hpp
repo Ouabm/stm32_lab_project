@@ -73,7 +73,7 @@ namespace cadmium
                     state.output = value;
                 }
                 // Write output value to GPIO pin: set or reset
-                HAL_GPIO_WritePin(port, pins.Pin, state.output ? GPIO_PIN_SET : GPIO_PIN_RESET);
+                HAL_GPIO_WritePin(port, pins.Pin, state.output ? GPIO_PIN_RESET : GPIO_PIN_SET);
             }
         }
 

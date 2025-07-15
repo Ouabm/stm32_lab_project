@@ -28,7 +28,7 @@ namespace cadmium
         double sigma; // Time until next internal transition
 
         // Constructor initializing default values
-        explicit DigitalInputState() : output(false), last(false), sigma(0.1) {}
+        explicit DigitalInputState() : output(false), sigma(0.1) {}
     };
 
 #ifndef NO_LOGGING
