@@ -96,7 +96,7 @@ If the main project fails to run, test the stm32_CO2 project first and ensure th
 
 
 
-3. **Running**:
+2. **Running**:
 
 ```bash
 git clone https://github.com/Ouabm/stm32_lab_project.git
